@@ -20,7 +20,7 @@ public class Regex {
     private static final String F_NAME="^[A-Z]\\w{3,}$";
     private static final String L_NAME="^[A-Z]\\w{3,}$";
     private static final String MOBILE="^(91)[\\s][1-9][0-9]{9}$";
-    private static final String PASSWORD="^(?=.*?[A-Z])(?=.*?[a-z]).{8,}$";
+    private static final String PASSWORD="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$";
     private static final String E_MAIL=("^(?=.{1,64}@)[A-Za-z0-9_-]+(\\.[A-Za-z0-9_-]+)*@"
             + "[^-][A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z]{2,})$");
 
