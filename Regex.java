@@ -7,18 +7,20 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Regex {
-    String fname,lname,email,mobile;
+    String fname,lname,email,mobile,password;
 
-    Regex(String fname,String lname, String email, String mobile){
+    Regex(String fname,String lname, String email, String mobile , String password){
         this.fname=fname;
         this.lname=lname;
         this.email=email;
         this.mobile=mobile;
+        this.password=password;
     }
 
     private static final String F_NAME="^[A-Z]\\w{3,}$";
     private static final String L_NAME="^[A-Z]\\w{3,}$";
     private static final String MOBILE="^(91)[\\s][1-9][0-9]{9}$";
+    private static final String PASSWORD="^\\d\\w{8,}$";
     private static final String E_MAIL=("^(?=.{1,64}@)[A-Za-z0-9_-]+(\\.[A-Za-z0-9_-]+)*@"
             + "[^-][A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z]{2,})$");
 
@@ -44,6 +46,10 @@ public class Regex {
         System.out.println("enter Mobile number of format 91 xxxxxxxxxx ");
         String mobile = sc.nextLine();
         System.out.println( Pattern.matches(MOBILE,mobile));
+
+        System.out.println("enter Mobile number of format 91 xxxxxxxxxx ");
+        String password = sc.nextLine();
+        System.out.println( Pattern.matches(PASSWORD,password));
 
 
         return null;
