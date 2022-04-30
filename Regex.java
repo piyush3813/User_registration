@@ -1,9 +1,6 @@
 package com.bridgelab;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Regex {
@@ -20,7 +17,7 @@ public class Regex {
     private static final String F_NAME="^[A-Z]\\w{3,}$";
     private static final String L_NAME="^[A-Z]\\w{3,}$";
     private static final String MOBILE="^(91)[\\s][1-9][0-9]{9}$";
-    private static final String PASSWORD="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$";
+    private static final String PASSWORD="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#$%&*^()<>:;']).{8,}$";
     private static final String E_MAIL=("^(?=.{1,64}@)[A-Za-z0-9_-]+(\\.[A-Za-z0-9_-]+)*@"
             + "[^-][A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z]{2,})$");
 
@@ -28,37 +25,47 @@ public class Regex {
     }
 
 
-    public static String gfg(){
+    public String gfg(){
         Scanner sc =  new Scanner(System.in);
 
         System.out.println("enter first name ");
-        String fname = sc.nextLine();
+         fname = sc.nextLine();
         System.out.println(Pattern.matches(F_NAME,fname));
 
         System.out.println("enter last name ");
-        String lname = sc.nextLine();
+         lname = sc.nextLine();
         System.out.println( Pattern.matches(L_NAME,lname));
 
         System.out.println("enter E-mail ");
-        String email = sc.nextLine();
+         email = sc.nextLine();
         System.out.println( Pattern.matches(E_MAIL,email));
 
         System.out.println("enter Mobile number of format 91 xxxxxxxxxx ");
-        String mobile = sc.nextLine();
+         mobile = sc.nextLine();
         System.out.println( Pattern.matches(MOBILE,mobile));
 
-        System.out.println("enter Mobile number of format 91 xxxxxxxxxx ");
-        String password = sc.nextLine();
+        System.out.println("enter Password ");
+         password = sc.nextLine();
         System.out.println( Pattern.matches(PASSWORD,password));
 
 
         return null;
     }
 
-    public static void main(String[] args){
-        List<Regex> list = new ArrayList<Regex>();
+    public void display(){
+        System.out.println("first name -->"+fname);
+        System.out.println("last name -->"+lname);
+        System.out.println("email -->"+email);
+        System.out.println("Mobile number -->"+mobile);
+        System.out.println("password entered -->"+password);
+    }
 
-        Regex l1 = new Regex(gfg());
+    public static void main(String[] args){
+        Regex re = new Regex(null ,null,null,null,null);
+        re.gfg();
+        re.display();
+
+        }
 
     }
-}
+
